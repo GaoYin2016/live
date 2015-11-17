@@ -1,0 +1,106 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        applicationId "tv.yewai.live"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "2.0.1.20151106"
+
+        ndk {
+            moduleName "JniToolKit"
+            ldLibs "log", "z", "m"
+            abiFilters "armeabi", "armeabi-v7a","arm64-v8a","x86"
+        }
+
+    }
+
+    //执行lint检查，有任何的错误或者警告提示，都会终止构建，我们可以将其关掉。
+    lintOptions {
+        abortOnError false
+    }
+
+    // Remove warnings
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file("E:/workspace_android/android.jks")
+            storePassword "218#!*nn"
+            keyAlias "star"
+            keyPassword "81621594"
+        }
+        release {
+            storeFile file("E:/workspace_android/android.jks")
+            storePassword "218#!*nn"
+            keyAlias "star"
+            keyPassword "81621594"
+        }
+    }
+
+    buildTypes {
+        release {
+            //混淆
+            minifyEnabled false
+            //Zipalign优化
+            zipAlignEnabled true
+            //加载默认混淆配置文件 progudard-android.txt在sdk目录里面，不用管，proguard.cfg是我们自己配<span></span>的混淆文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //签名
+            signingConfig signingConfigs.release
+        }
+        debug {
+            jniDebuggable true
+            //混淆
+            minifyEnabled false
+            //Zipalign优化
+            zipAlignEnabled true
+            //加载默认混淆配置文件 progudard-android.txt在sdk目录里面，不用管，proguard.cfg是我们自己配<span></span>的混淆文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //签名
+            signingConfig signingConfigs.debug
+        }
+
+
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile files('libs/commons-beanutils-1.7.jar')
+    compile files('libs/commons-lang.jar')
+    compile files('libs/commons-logging-1.1.1.jar')
+    compile files('libs/ezmorph.jar')
+    compile files('libs/fastjson-1.1.36.jar')
+    compile files('libs/jsoup-1.8.1.jar')
+    compile files('libs/juv-rtmp-client-1.5.10.jar')
+    compile files('libs/mina-core-2.0.7.jar')
+    compile files('libs/Msc.jar')
+    compile 'com.android.support:appcompat-v7:23.1.0'
+    compile 'com.android.support:support-v4:23.1.0'
+    compile files('libs/log4j-1.2.15.jar')
+    compile files('libs/slf4j-api-1.6.6.jar')
+    compile files('libs/slf4j-log4j12-1.6.4.jar')
+    compile files('libs/commons-lang-2.6.jar')
+    compile files('libs/rtmp-client-0.9.1-lite.jar')
+    compile files('libs/BaiduLBS_Android.jar')
+    compile files('libs/IndoorscapeAlbumPlugin.jar')
+    compile files('libs/httpmime-4.1.2.jar')
+    compile files('libs/commons-codec-1.5.jar')
+}

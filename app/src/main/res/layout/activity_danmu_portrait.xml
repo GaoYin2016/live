@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ff6600"
+    android:gravity="center"
+    android:layout_centerVertical="true"
+    android:layout_centerHorizontal="true"
+    android:layout_centerInParent="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".DanmuActivity">
+
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/roomName"
+        android:textSize="@dimen/rootName_textSize"
+        android:layout_alignBottom="@+id/roomName"
+        android:layout_toLeftOf="@+id/roomName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id="@+id/roomName"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/connect"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/connect"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:text="@string/connect"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="94dp"
+        android:background="@drawable/douyulogo"
+        android:gravity="center"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/danmu_textview_horizontal_margin"
+
+        android:paddingRight="@dimen/danmu_textview_horizontal_margin"
+        android:paddingTop="@dimen/danmu_textview_vertical_margin"
+        android:scrollbarStyle="outsideOverlay"
+        android:textColor="#FFFFFF"
+        android:tileMode="disabled"
+        android:layout_alignRight="@+id/connect"
+        android:layout_alignEnd="@+id/connect"
+        android:layout_below="@+id/info"
+        android:layout_above="@+id/caplive">
+
+        <TextView
+            android:id="@+id/danmu"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fadeScrollbars="false"
+            android:scrollbars="vertical"
+            android:textColor="#FFFFFF" />
+    </ScrollView>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="@string/caplive"
+        android:id="@+id/caplive"
+        android:layout_above="@+id/liveadd"
+        android:layout_toRightOf="@+id/tts"
+        android:layout_toEndOf="@+id/tts" />
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="@string/h264codes"
+        android:id="@+id/zhibo"
+        android:layout_above="@+id/kjfs"
+        android:layout_toRightOf="@+id/caplive"
+        android:layout_toEndOf="@+id/caplive" />
+
+    <CheckBox
+        android:id="@+id/tts"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="@string/openTTS"
+        android:layout_above="@+id/liveadd"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/houtai"
+        android:layout_toLeftOf="@+id/houtai"
+        android:layout_below="@+id/scrollView" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/clear"
+        android:id="@+id/clear"
+        android:layout_below="@+id/scrollView"
+        android:layout_toRightOf="@+id/zhibo"
+        android:layout_toEndOf="@+id/zhibo"
+        android:layout_above="@+id/black" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="@string/liveadd"
+        android:id="@+id/liveadd"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/houtai"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/backnotily"
+        android:checked="false"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/liveadd"
+        android:layout_toEndOf="@+id/liveadd" />
+
+    <Button
+        android:id="@+id/kjfs"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="right"
+        android:text="@string/quick"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/mapManger"
+        android:layout_toEndOf="@+id/mapManger" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="@string/mapManager"
+        android:id="@+id/mapManger"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/houtai"
+        android:layout_toEndOf="@+id/houtai" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="@string/black"
+        android:id="@+id/black"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/kjfs"
+        android:layout_toEndOf="@+id/kjfs"
+        android:layout_alignTop="@+id/kjfs" />
+
+
+
+</RelativeLayout>

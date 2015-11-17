@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">直播助手</string>
+    <string name="roomName">房间信息</string>
+    <string name="connect">连接</string>
+    <string name="quick">快捷方式</string>
+    <string name="backnotily">流量监控</string>
+    <string name="openTTS">TTS</string>
+    <string name="mapManager">地图管理</string>
+    <string name="liveadd">RTMP设置</string>
+    <string name="h264codes">编码器直播</string>
+    <string name="black">后台运行</string>
+    <string name="caplive">摄像头直播</string>
+
+    <string name="rtmpserverlabel">RTMP服务器地址</string>
+    <string name="rtmpparamlabel">RTMP应用流名称</string>
+
+    <string name="serverurl">http://qixieke.com/update.xml</string>
+    <string name="clear">清屏</string>
+
+</resources>

@@ -1,0 +1,12 @@
+<resources>
+    <!-- 弹幕Activity 外编剧 -->
+    <dimen name="activity_horizontal_margin">0dp</dimen>
+    <dimen name="activity_vertical_margin">0dp</dimen>
+
+    <!--弹幕文本外边距-->
+    <dimen name="danmu_textview_horizontal_margin">20dp</dimen>
+    <dimen name="danmu_textview_vertical_margin">20dp</dimen>
+
+    <!--房间信息习题-->
+    <dimen name="rootName_textSize">35px</dimen>
+</resources>
